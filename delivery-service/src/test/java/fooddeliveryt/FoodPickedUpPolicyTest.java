@@ -29,7 +29,7 @@ public class FoodPickedUpPolicyTest {
 
         // validate 메서드 존재 여부 확인합니다.
         try {
-            assertNotNull(entity.validate());
+            assertTrue(entity.validate());
         } catch (Exception e) {
             LOGGER.error("Validate method doesn't exist.", e);
         }
