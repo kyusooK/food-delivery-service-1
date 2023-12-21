@@ -45,11 +45,15 @@ public class FoodPickedUpPolicyTest {
 
     @Test
     @SuppressWarnings("unchecked")
-    public void test0() {
+    public void testDeliveryArranged() {
         DeliveryArranged entity = new DeliveryArranged();
         entity.setDeliveryId(12345L);
         entity.setOrderId(98765L);
-        entity.setDeliveryAddress("Seoul");
-        //...
+        entity.setDeliveryAddress(
+            new Address("Seoul", "State", "City", "Country", "Zipcode")
+        );
+        assertEquals(entity.getDeliveryId(), Long.valueOf(12345L));
+        assertEquals(entity.getOrderId(), Long.valueOf(98765L));
+        assertEquals(entity.getDeliveryAddress().getStreet(), "Seoul");
     }
 }
