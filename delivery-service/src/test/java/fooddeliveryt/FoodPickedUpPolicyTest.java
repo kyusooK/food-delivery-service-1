@@ -24,13 +24,13 @@ public class FoodPickedUpPolicyTest {
         if (actualValue instanceof String) assertEquals(
             expectedValue,
             actualValue
-        ); else LOGGER.error("Invalid Value from toString() method");
+        ); else LOGGER.error("Invalid Value from toString() method.");
 
         // validate 메서드 존재 여부 확인합니다.
         try {
             assertTrue(entity.validate());
         } catch (Exception e) {
-            LOGGER.error("Validate method doesn't exist.");
+            LOGGER.error("Validate method doesn't exist.", e);
         }
     }
 }
