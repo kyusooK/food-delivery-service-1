@@ -29,6 +29,7 @@ public class FoodPickedUpPolicyTest {
             assertTrue(entity.validate());
         } catch (Exception e) {
             LOGGER.error("Validate method doesn't exist.", e);
+            throw e;
         }
     }
 }
