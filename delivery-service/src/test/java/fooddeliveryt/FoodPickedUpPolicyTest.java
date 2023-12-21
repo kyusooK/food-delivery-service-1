@@ -16,6 +16,6 @@ public class FoodPickedUpPolicyTest {
         String actualValue = entity.toString();
         assertEquals(expectedValue, actualValue);
 
-        assertTrue(actualValue, entity.validate());
+        assertTrue(entity.validate());
     }
 }
