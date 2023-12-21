@@ -33,7 +33,20 @@ public class Delivery {
     }
 
     @PrePersist
-    public void onPrePersist() {}
+    public void onPrePersist() {
+        // 비즈니스 로직 추가
+        if (this.deliveryId == null || this.deliveryId == 0) {
+            throw new IllegalStateException(
+                "DeliveryId must not be null or zero"
+            );
+        }
+        if (this.orderId == null || this.orderId == 0) {
+            throw new IllegalStateException("OrderId must not be null or zero");
+        }
+        if (this.deliveryAddress == null) {
+            throw new IllegalStateException("DeliveryAddress must not be null");
+        }
+    }
 
     public static DeliveryRepository repository() {
         DeliveryRepository deliveryRepository = DeliveryServiceApplication.applicationContext.getBean(
