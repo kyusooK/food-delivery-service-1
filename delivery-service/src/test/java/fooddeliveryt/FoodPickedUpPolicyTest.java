@@ -17,17 +17,14 @@ public class FoodPickedUpPolicyTest {
     @Test
     public void testDeliveryArranged() {
         DeliveryArranged entity = new DeliveryArranged();
-        // 비교 및 단언문 작성
         String expectedValue = "Expected Value";
         String actualValue = entity.toString();
-        // toString() 메서드로 받는 값이 실제로 비교 가능한지 확인합니다.
         if (actualValue instanceof String) {
             assertEquals(expectedValue, actualValue);
         } else {
             LOGGER.error("Invalid Value from toString() method.");
         }
 
-        // validate 메서드 존재 여부 확인합니다.
         try {
             assertTrue(entity.validate());
         } catch (Exception e) {
