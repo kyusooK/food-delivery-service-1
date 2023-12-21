@@ -44,7 +44,6 @@ public class FoodPickedUpPolicyTest {
     public DeliveryArrangedRepository repository;
 
     @Test
-    @SuppressWarnings("unchecked")
     public void testDeliveryArranged() {
         DeliveryArranged entity = new DeliveryArranged();
         entity.setDeliveryId(12345L);
